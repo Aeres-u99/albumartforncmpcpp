@@ -2,7 +2,7 @@
 
 First of all, its not official. Second of all its very very buggy, and very hacky. But hey! it works. Before we start on how and why, its important to see what it looks like.
 
-![](/home/akuma/SoopaProject/albumartforncmpcpp/scrot.png)
+![Screenshot](./scrot.png)
 
 Bottom right, left panel is ncmpcpp and right is the albumart. 
 
