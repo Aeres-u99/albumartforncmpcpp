@@ -67,4 +67,4 @@ My code is mostly the copy pasta from [.ncmpcpp · master · sourplum / dotfiles
 #### Social
 
 @ricingonlinux on Telegram
-![RicingonLinux](http://t.me/RicingOnLinux)
+https://t.me/RicingOnLinux
