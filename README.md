@@ -46,6 +46,10 @@ Bottom right, left panel is ncmpcpp and right is the albumart.
 
 3. Check /tmp thats where most of the things are, if it still does not works launch kunst manually and see what happens
 
+4. Image is going out of boundary: 
+   * Resize tmux panes
+   * Remove the Paddings (check image.sh)
+   * reduce the image size (--size parameter inside script)
 #### Why?
 
 1. Aesthetically pleasing, infact very good looking. 
