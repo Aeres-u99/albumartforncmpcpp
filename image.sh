@@ -1,30 +1,32 @@
 #!/usr/bin/env bash
 clear
-#this is for future versions, I will work on it later
-#size=$(tput cols)
-#padding=1
-#_pid=$!
+size=$(tput cols)
+padding=1
+_pid=$!
 
 COVERPATH="/tmp/kunst.jpg"
 function check_status(){
-    SERVICE="kunst"
-    if pgrep -fl "$SERVICE" >/dev/null
-    then
-        echo "$SERVICE is running no worries" 
-    else
-        echo "$SERVICE stopped"
-        echo "restarting ..."
-        kunst >> /tmp/kunst.log & 
-fi
+    #Start kunst regardless
+    kunst --size 256x256 --silent > /tmp/kunst.log &
+}
+function killer_queen(){
+    for i in $(ps -aux | grep kunst | tr -s \ | cut -d " " -f 2)
+    do
+        kill -9 $i &> /dev/null ;
+    done
+    clear
+    echo "Bye!"
 }
 check_status
+trap "killer_queen" SIGHUP SIGINT SIGTERM
+
 function ImageLayer {
     ueberzug layer -sp json
 }
 
 COVER="/tmp/kunst.jpg"
-X_PADDING=0
-Y_PADDING=0
+X_PADDING=10
+Y_PADDING=10
 
 function add_cover {
     if [ -e $COVER ]; then
