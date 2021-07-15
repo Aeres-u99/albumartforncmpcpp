@@ -7,7 +7,7 @@ _pid=$!
 COVERPATH="/tmp/kunst.jpg"
 function check_status(){
     #Start kunst regardless
-    kunst --size 256x256 --silent > /tmp/kunst.log &
+    kunst --silent --size 256x256 > /tmp/kunst.log &
 }
 function killer_queen(){
     for i in $(ps -aux | grep kunst | tr -s \ | cut -d " " -f 2)
